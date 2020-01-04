@@ -20,6 +20,7 @@ Title: 三数之和
 
 # 固定一个值，找另外二个值它们和等于 0，
 # 如何找另外两个值，用的是双指针！
+# 我还是没搞明白
 from typing import List
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
