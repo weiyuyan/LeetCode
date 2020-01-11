@@ -18,22 +18,36 @@
 from typing import List
 class Solution:
 
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hashmap = {}
-        for i, num in enumerate(nums):
-            if hashmap.get(target - num) is not None:
-                return [i, hashmap.get(target - num)]
-            hashmap[num] = i
-
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        result = []
-        for i in range(len(nums)):
-            tmp_result = self.twoSum(nums[i:], -nums[i])
-            result.append(tmp_result)
-            result = list(filter(None, result))
-        print(result)
+        n = len(nums)
+        res = []
+        if not nums or n<3:
+            return []
+        nums.sort()
+        for i in range(n):
+            if (nums[i]>0):
+                return res
+            if (i>0 and nums[i]==nums[i-1]):    # 避免重复数字组合出现
+                continue
+            L = i+1
+            R = n-1
+            while(L<R):
+                if (nums[i]+nums[L]+nums[R] == 0):
+                    res.append([nums[i], nums[L], nums[R]])
+                    while (L < R and nums[L] == nums[L + 1]):
+                        L = L + 1
+                    while (L < R and nums[R] == nums[R - 1]):
+                        R = R - 1
+                    L=L+1
+                    R=R-1
+                elif (nums[i]+nums[L]+nums[R] > 0):
+                    R -= 1
+                else:
+                    L += 1
+        return res
+
 
 if __name__ == '__main__':
     solution = Solution()
-    solution.threeSum([-1,0,1,2,-1,-4])
-    ## 未完待续
+    res = solution.threeSum([-1,0,1,2,-1,-4])
+
