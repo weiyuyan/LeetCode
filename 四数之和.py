@@ -24,44 +24,29 @@ from typing import List
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         n = len(nums)
-        res = []
-        if not nums or n<4:
+        # 如果小于四个数，那就别整了
+        if n < 4:
             return []
-        nums.sort()
-        for i in range(n):
-            tmp_res = self.threeSum(nums[i:], target=nums[i])
-            for j in tmp_res:
-                j.append(nums[i])
-                res.append(j)
-        return res
 
-    def threeSum(self, nums: List[int], target: int) -> List[List[int]]:
-        n = len(nums)
-        res = []
-        if not nums or n<3:
-            return []
         nums.sort()
-        for i in range(n):
-            if (nums[i]>0):
-                return res
-            if (i>0 and nums[i]==nums[i-1]):    # 避免重复数字组合出现
-                continue
-            L = i+1
-            R = n-1
-            while(L<R):
-                if (nums[i]+nums[L]+nums[R] == target):
-                    res.append([nums[i], nums[L], nums[R]])
-                    while (L < R and nums[L] == nums[L + 1]):
-                        L = L + 1
-                    while (L < R and nums[R] == nums[R - 1]):
-                        R = R - 1
-                    L=L+1
-                    R=R-1
-                elif (nums[i]+nums[L]+nums[R] > target):
-                    R -= 1
-                else:
-                    L += 1
-        return res
+        # 如果前四个和就大于target，那就凉凉，别整了
+        if sum(nums[:4]) > target:
+            return []
+
+        result = []
+        for one in range(n-2):
+            for two in range(one+1, n-1):
+                Left = two+1
+                Right = n-1
+                while(Left != Right):
+                    sum_num = nums[one] + nums[two] + nums[Left] + nums[Right]
+                    if sum_num == target and [nums[one], nums[two], nums[Left], nums[Right]] not in result:
+                        result.append([nums[one], nums[two], nums[Left], nums[Right]])
+                    if sum_num <= target:
+                        Left += 1
+                    else:
+                        Right -= 1
+        return result
 
 if __name__ == '__main__':
     solution = Solution()
