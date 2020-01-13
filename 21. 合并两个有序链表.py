@@ -37,7 +37,7 @@ class Solution:
             p.next = r
         else:
             p.next = q
-        return p.next
+        return head.next.next
 
 
 if __name__ == '__main__':
@@ -52,3 +52,4 @@ if __name__ == '__main__':
     ll = solution.mergeTwoLists(l1, l2)
     while(ll != None):
         print(ll.val)
+        ll = ll.next
