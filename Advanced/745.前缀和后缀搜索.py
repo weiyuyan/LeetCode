@@ -28,7 +28,7 @@ class WordFilter:
         self.pre_d = {}
         self.words = words
 
-
+pass
     def f(self, prefix: str, suffix: str) -> int:
 
 
