@@ -23,4 +23,36 @@
 1 <= A[i] <= 30000
 
 '''
-# 方法一：单调栈
+# 方法一：暴力法
+# 这种方法会造成超时
+from typing import List
+# class Solution:
+#     def sumSubarrayMins(self, A: List[int]) -> int:
+#         A_len = len(A)
+#         res = 0
+#         for i in range(A_len):
+#             for j in range(i, A_len):
+#                 res += min(A[i:j+1])
+#                 # print(A[i:j+1])
+#         return res
+
+
+# 方法二：单调栈
+# 不会
+class Solution:
+    def sumSubarrayMins(self, A: List[int]) -> int:
+        res = 0
+        stack = []
+        A = [0] + A + [0]
+        for i, x in enumerate(A):
+            while stack and A[stack[-1]] > x:
+                j = stack.pop()
+                k = stack[-1]
+                res += A[j] * (i - j) * (j - k)
+            stack.append(i)
+        return res % (10 ** 9 + 7)
+
+
+solution = Solution()
+res = solution.sumSubarrayMins([3,1,2,4])
+print(res)
