@@ -27,6 +27,7 @@
 -10^5 <= nums[i] <= 10^5
 '''
 
-
+from typing import List
 class Solution:
     def maxValueAfterReverse(self, nums: List[int]) -> int:
+        pass
