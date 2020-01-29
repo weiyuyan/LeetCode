@@ -44,19 +44,59 @@ from typing import List
 
 
 # 刚开始我们只有空集一个答案，循环所有可能的数字，每次循环我们对当前答案的每一种情况考虑加入从1到上限次该数字并更新答案即可
+# 方法一：字典法（统计频次再组合）
+# class Solution:
+#     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+#         dic = {}
+#         for i in nums:
+#             dic[i] = dic.get(i, 0) + 1
+#         res = [[]]
+#         for i, v in dic.items():
+#             temp = res.copy()
+#             for j in res:
+#                 for k in range(v):
+#                     temp.append(j+[i]*(k+1))
+#             res = temp
+#         return res
+
+
+# 方法二：回溯法
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        dic = {}
-        for i in nums:
-            dic[i] = dic.get(i, 0) + 1
-        res = [[]]
-        for i, v in dic.items():
-            temp = res.copy()
-            for j in res:
-                for k in range(v):
-                    temp.append(j+[i]*(k+1))
-            res = temp
+        n = len(nums)
+        nums.sort()
+        def trackback(depth, tmp):
+            res.append(tmp[:])
+            if depth == n:
+                return
+            for j in range(depth, n):
+                if (j > depth and nums[j] == nums[j-1]):
+                    continue
+                trackback(j+1, tmp+[nums[j]])
+
+
+        res = []
+        trackback(0, [])
         return res
+# res:[[], [1], [1, 2], [1, 2, 2], [2], [2, 2], [2, 2, 2]]
+
+# class Solution:
+#     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+#         n=len(nums)
+#         nums.sort()
+#         def track_back(i,tmp):
+#             res.append(tmp[:])
+#             if(i==n):
+#                 return
+#             for j in range(i,n):
+#                 if(j>i and nums[j]==nums[j-1]):
+#                     continue
+#                 track_back(j+1,tmp+[nums[j]])
+#         res=[]
+#         track_back(0,[])
+#         return res
+# res:[[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]
+
 
 if __name__ == '__main__':
     solution = Solution()
