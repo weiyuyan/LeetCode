@@ -55,13 +55,15 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    board =\
-[
-  ['A','A','C','E'],
-  ['Z','A','C','S'],
-  ['B','D','E','E']
-]
-    word = "AAD"
+#     board =\
+# [
+#   ['A','A','C','E'],
+#   ['Z','A','C','S'],
+#   ['B','D','E','E']
+# ]
+#     word = "AAD"
+    board = [['A']]
+    word = "A"
     res = solution.exist(board, word)
     print(res)
 
