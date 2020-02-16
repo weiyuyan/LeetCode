@@ -47,17 +47,27 @@ events[i].length == 2
 '''
 
 from typing import List
+
+'''
+这是一道典型的扫描算法题。由于每个时间点最多参加一个会议，我们可以从1开始遍历所有时间。
+对于每一个时间点，所有在当前时间及之前时间开始，并且在当前时间还未结束的会议都是可参加的。
+显然，在所有可参加的会议中，选择结束时间最早的会议是最优的，因为其他会议还有更多的机会可以去参加。
+# 思路不错，但是超时了
+'''
 class Solution:
     def maxEvents(self, events: List[List[int]]) -> int:
         if len(events) == 1: return 1
 
         Days = []   # 参赛的日期
-        # 对数组进行复合排序，先对第一列从小到大排序，在此基础上对第二列进行从小到大排序
-        events.sort(key=lambda x: x[0])
-        for i in range(len(events)-1):
-            if events[i][0] == events[i+1][0]:
-                if events[i][1] > events[i+1][1]:
-                    events[i], events[i+1] = events[i+1], events[i]
+
+        # 对数组进行复合排序，先对第二列从小到大排序，在此基础上对第一列进行从小到大排序
+        # 时间复杂度o(nlogn)
+        events.sort(key=lambda x: (x[1], x[0])) # 这一句和下边5句一个功能，可见。。。（论憨批能有多憨
+        # events.sort(key=lambda x: x[1])
+        # for i in range(len(events)-1):
+        #     if events[i][1] == events[i+1][1]:
+        #         if events[i][0] > events[i+1][0]:
+        #             events[i], events[i+1] = events[i+1], events[i]
 
         for i in events:
             for j in range(i[0], i[1]+1):
@@ -68,7 +78,31 @@ class Solution:
         return len(Days)
 
 
+
+'''
+新的解法，爷把Days从List类型换成set就通过了。。。
+草他妈的
+为啥！！！
+'''
+class Solution:
+    def maxEvents(self, events: List[List[int]]) -> int:
+
+        # 对数组进行复合排序，先对第二列从小到大排序，在此基础上对第一列进行从小到大排序
+        # 时间复杂度o(nlogn)
+        events.sort(key=lambda x: (x[1], x[0]))
+
+        # 这里把Days设置成set，然后就不超时了，很迷
+        Days = set()
+        for i in events:
+            for j in range(i[0], i[1]+1):
+                if j not in Days:
+                    Days.add(j)
+                    break
+
+        return len(Days)
+
+
 solution = Solution()
-events = [[1,2],[2,3],[3,4],[1,1]]
+events = [[1, 2]]
 res = solution.maxEvents(events)
 print(res)

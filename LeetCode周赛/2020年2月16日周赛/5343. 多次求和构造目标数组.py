@@ -38,5 +38,58 @@ N == target.length
 1 <= target[i] <= 10^9
 '''
 
+'''
+参考了力扣大佬“小白二号”的思路
+顺着推肯定是没戏，我们考虑倒着推
+
+按照题目意思，假设数组 [a1, a2, a3, a4,..., an]的和是 s，那么这个 s 肯定比这数组里面任一个数都要大。
+不管替换成哪个数，生成出来的数组的最大值一定是 s 。
+
+倒过来，假设数组 [b1. b2, b3, b4,..., bn] 是生成后的数组，那么最大值一定是上一轮的和。
+假设这个最大值是 p ，当前数组的和是 s ，那么上一轮的数组的和是 p ，这个最大值替换成 p - (s - p)
+
+这个题的解法就是不断的将最大值还原，直到整个数组都变成了1
+'''
+
+# from typing import List
+# class Solution:
+#     def isPossible(self, target: List[int]) -> bool:
+#
+#         while (sum(target) > len(target)):
+#             tmp_sum = sum(target)
+#             tmp_max = max(target)
+#             pos = target.index(tmp_max)
+#             target[pos] = tmp_max - (tmp_sum-tmp_max)
+#             if target[pos] <= 0: return False
+#
+#         if sum(target) == len(target): return True
+#
+#         return False
+'''
+这。。。这就过了？？那我再优化一下下嚯嚯嚯
+'''
+
+# 优化版本
+from typing import List
 class Solution:
     def isPossible(self, target: List[int]) -> bool:
+
+        tmp_sum = sum(target)
+
+        while (tmp_sum > len(target)):
+            tmp_max = max(target)
+            pos = target.index(tmp_max)
+            # 上一个最大的值，target[pos]
+            target[pos] = tmp_max - (tmp_sum-tmp_max)
+            # 更新tmp_sum
+            tmp_sum = tmp_sum + target[pos] - tmp_max
+            if target[pos] <= 0: return False
+
+        if sum(target) == len(target): return True
+
+        return False
+
+solution = Solution()
+a = [9, 9, 1]
+res = solution.isPossible(a)
+print(res)
