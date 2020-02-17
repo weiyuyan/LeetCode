@@ -40,14 +40,13 @@ class Solution:
     def countNegatives(self, grid: List[List[int]]) -> int:
         res = 0
         for i in grid:
-            if not i: continue
             for j in i:
                 if j < 0:
                     res += 1
         return res
 
 solution = Solution()
-a = [[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]
-b = [[]]
-res = solution.countNegatives(b)
+a = [[4,3,2,-1],[],[1,1,-1,-2],[-1,-1,-2,-3]]
+
+res = solution.countNegatives(a)
 print(res)
