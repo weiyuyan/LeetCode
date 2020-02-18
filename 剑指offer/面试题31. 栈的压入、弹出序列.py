@@ -26,3 +26,17 @@ pushed 是 popped 的排列。
 注意：本题与主站 946 题相同：https://leetcode-cn.com/problems/validate-stack-sequences/
 
 '''
+from typing import List
+
+# 思路：设计一个辅助栈
+class Solution:
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+        assits_list = []    # 这是一个辅助栈
+        j = 0
+        for x in pushed:
+            assits_list.append(x)
+            while assits_list and j<len(popped) and assits_list[-1] == popped[j]:
+                assits_list.pop()
+                j += 1
+
+        return not assits_list
