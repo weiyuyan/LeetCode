@@ -237,189 +237,231 @@ file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年1月26日周赛\__init
 line count::3
 total count:4291
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月16日周赛\5340. 统计有序矩阵中的负数.py 
-line count::53
-total count:4344
+line count::52
+total count:4343
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月16日周赛\5341. 最后 K 个数的乘积.py 
 line count::116
-total count:4460
+total count:4459
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月16日周赛\5342. 最多可以参加的会议数目.py 
-line count::74
-total count:4534
+line count::108
+total count:4567
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月16日周赛\5343. 多次求和构造目标数组.py 
-line count::42
-total count:4576
+line count::95
+total count:4662
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月16日周赛\__init__.py 
 line count::3
-total count:4579
+total count:4665
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月2日周赛\5328. 方阵中战斗力最弱的 K 行.py 
 line count::85
-total count:4664
+total count:4750
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月2日周赛\5329. 数组大小减半.py 
 line count::69
-total count:4733
+total count:4819
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月2日周赛\5331. 跳跃游戏 V.py 
 line count::98
-total count:4831
+total count:4917
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月2日周赛\__init__.py 
 line count::3
-total count:4834
+total count:4920
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月8日双周赛\5311. 将数字变成 0 的操作次数.py 
 line count::56
-total count:4890
+total count:4976
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月8日双周赛\5312. 大小为 K 且平均值大于等于阈值的子数组数目.py 
 line count::81
-total count:4971
+total count:5057
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月8日双周赛\5313. 时钟指针的夹角.py 
 line count::19
-total count:4990
+total count:5076
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月8日双周赛\__init__.py 
 line count::3
-total count:4993
+total count:5079
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月9日第 175 场周赛\5332. 检查整数及其两倍数是否存在.py 
 line count::54
-total count:5047
+total count:5133
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月9日第 175 场周赛\5333. 制造字母异位词的最小步骤数.py 
 line count::68
-total count:5115
+total count:5201
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月9日第 175 场周赛\5334. 推文计数.py 
 line count::56
-total count:5171
+total count:5257
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月9日第 175 场周赛\5335. 参加考试的最大学生数.py 
 line count::87
-total count:5258
+total count:5344
 file_name : C:\Users\微雨\Desktop\LeetCode\LeetCode周赛\2020年2月9日第 175 场周赛\__init__.py 
 line count::3
-total count:5261
+total count:5347
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\17. 电话号码的字母组合.py 
 line count::53
-total count:5314
+total count:5400
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\212. Word Search II.py 
 line count::80
-total count:5394
+total count:5480
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\216. Combination Sum III.py 
 line count::44
-total count:5438
+total count:5524
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\301. 删除无效的括号.py 
 line count::146
-total count:5584
+total count:5670
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\37. 解数独.py 
 line count::140
-total count:5724
+total count:5810
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\39. 组合总和.py 
 line count::63
-total count:5787
+total count:5873
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\40.组合总和II.py 
 line count::62
-total count:5849
+total count:5935
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\46. Permutations.py 
 line count::79
-total count:5928
+total count:6014
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\47. Permutations II.py 
 line count::54
-total count:5982
+total count:6068
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\51.N-Queens.py 
 line count::169
-total count:6151
+total count:6237
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\52. N-Queens II.py 
 line count::70
-total count:6221
+total count:6307
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\77. Combinations.py 
 line count::64
-total count:6285
+total count:6371
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\78.Subsets.py 
 line count::50
-total count:6335
+total count:6421
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\784. Letter Case Permutation.py 
 line count::60
-total count:6395
+total count:6481
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\79. Word Search.py 
 line count::69
-total count:6464
+total count:6550
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\90. Subsets II.py 
 line count::104
-total count:6568
+total count:6654
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\943. Find the Shortest Superstring.py 
 line count::146
-total count:6714
+total count:6800
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\996. 正方形数组的数目.py 
 line count::123
-total count:6837
+total count:6923
 file_name : C:\Users\微雨\Desktop\LeetCode\Search\__init__.py 
 line count::3
-total count:6840
+total count:6926
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\19. 二叉树的下一个节点.py 
 line count::45
-total count:6885
+total count:6971
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\20. 用两个栈实现队列.py 
 line count::77
-total count:6962
+total count:7048
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\21. 斐波那契数列.py 
 line count::31
-total count:6993
+total count:7079
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\22. 旋转数组的最小数字.py 
 line count::50
-total count:7043
+total count:7129
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\27. 数值的整数次方.py 
 line count::50
-total count:7093
+total count:7179
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\29. 删除链表中重复的节点.py 
 line count::57
-total count:7150
+total count:7236
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\32. 调整数组顺序使奇数位于偶数前面.py 
 line count::55
-total count:7205
+total count:7291
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\32.py 
+line count::43
+total count:7334
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\__init__.py 
 line count::8
-total count:7213
+total count:7342
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题12. 矩阵中的路径.py 
 line count::70
-total count:7283
+total count:7412
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题13. 机器人的运动范围.py 
 line count::64
-total count:7347
+total count:7476
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题14- I. 剪绳子.py 
 line count::42
-total count:7389
+total count:7518
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题14- II. 剪绳子 II.py 
 line count::46
-total count:7435
+total count:7564
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题15. 二进制中1的个数.py 
 line count::63
-total count:7498
+total count:7627
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题17. 打印从1到最大的n位数.py 
 line count::43
-total count:7541
+total count:7670
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题18. 在O(1)时间删除链表结点.py 
 line count::31
-total count:7572
+total count:7701
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题19. 正则表达式匹配.py 
 line count::67
-total count:7639
+total count:7768
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题2.实现Singleton模式.py 
 line count::34
-total count:7673
+total count:7802
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题20. 表示数值的字符串.py 
 line count::128
-total count:7801
+total count:7930
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题22. 链表中倒数第k个节点.py 
+line count::49
+total count:7979
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题24. 反转链表.py 
+line count::57
+total count:8036
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题25. 合并两个排序的链表.py 
+line count::30
+total count:8066
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题26. 树的子结构.py 
+line count::67
+total count:8133
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题27. 二叉树的镜像.py 
+line count::60
+total count:8193
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题28. 对称的二叉树.py 
+line count::65
+total count:8258
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题29. 顺时针打印矩阵.py 
+line count::90
+total count:8348
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题3.2.不修改数组找出重复的数字.py 
 line count::37
-total count:7838
+total count:8385
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题3.数组中重复的数字.py 
 line count::87
-total count:7925
+total count:8472
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题30. 包含min函数的栈.py 
+line count::74
+total count:8546
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题31. 栈的压入、弹出序列.py 
+line count::42
+total count:8588
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题32 - I. 从上到下打印二叉树.py 
+line count::57
+total count:8645
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题32 - II. 从上到下打印二叉树 II.py 
+line count::79
+total count:8724
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题32 - III. 从上到下打印二叉树 III.py 
+line count::128
+total count:8852
+file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题33. 二叉搜索树的后序遍历序列.py 
+line count::98
+total count:8950
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题4.二维数组中的查找.py 
 line count::53
-total count:7978
+total count:9003
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题5.替换空格.py 
 line count::33
-total count:8011
+total count:9036
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\面试题6.从尾到头打印链表.py 
 line count::45
-total count:8056
+total count:9081
 file_name : C:\Users\微雨\Desktop\LeetCode\剑指offer\（经典）面试题7.重建二叉树.py 
 line count::73
-total count:8129
+total count:9154
 
 --------------------------------------
-total file count:140
-total line count:8129
+total file count:154
+total line count:9154
