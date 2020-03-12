@@ -33,7 +33,7 @@ class Solution(object):
             stack.append(p.val)
             p = p.next
 
-        return [stack.pop() for i in range(len(stack))]
+        return [stack.pop() for _ in range(len(stack))]
 
 if __name__ == '__main__':
     solution = Solution()

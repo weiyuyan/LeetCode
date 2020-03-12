@@ -22,6 +22,13 @@ class Solution:
     def sumNums(self, n: int) -> int:
         return n and (n+self.sumNums(n-1))
 
+# 方法二：定义乘法运算
+class Solution:
+    def sumNums(self, n: int) -> int:
+        return self.multi(n, n+1) >> 1
+    def multi(self, a, b):
+        return b and ((b & 1 and a) + self.multi(a<<1, b>>1))
+
 solution = Solution()
 res = solution.sumNums(3)
 print(res)
