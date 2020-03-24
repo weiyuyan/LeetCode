@@ -46,3 +46,22 @@
 -1 -3 -3 -3 3 3
 3 3 5 5 6 7
 '''
+# 思考：首先暴力法怎么做？使用一个普通队列进行暴力搜索
+# 其次，思考如何去优化
+# 删掉所有冗余元素
+N, k = list(map(int, input().split()))
+sequence = list(map(int, input().split()))
+minqueue = []
+maxqueue = []
+
+hh = 0; tt = -1 # 队头和队尾
+for i in range(N):
+    if hh <= tt and minqueue[hh] < i-k+1:
+        hh += 1
+    while(hh<=tt and sequence[minqueue[tt]]>=sequence[i]):
+        tt -= 1
+    minqueue.append(i)
+    tt += 1
+
+    if(i>=k-1):
+        print(sequence[minqueue[hh]], end=' ')
