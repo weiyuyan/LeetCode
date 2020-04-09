@@ -44,4 +44,74 @@
 输入: "-91283472332"
 输出: -2147483648
 解释: 数字 "-91283472332" 超过 32 位有符号整数范围。
-     因此返回 INT_MIN (−231) 。'''
+     因此返回 INT_MIN (−231) 。
+'''
+# 方法一：自动机（有限状态机）
+# 字符串处理的题目往往涉及复杂的流程以及条件情况，如果直接上手写程序，一不小心就会写出极其臃肿的代码。
+#
+# 因此，为了有条理地分析每个输入字符的处理方法，我们可以使用自动机这个概念：
+#
+# 我们的程序在每个时刻有一个状态 s，每次从序列中输入一个字符 c，并根据字符 c 转移到下一个状态 s'。
+# 这样，我们只需要建立一个覆盖所有情况的从 s 与 c 映射到 s' 的表格即可解决题目中的问题。
+#
+#           ' '	    +/-	    number	    other
+# start	    start	signed	in_number	end
+# signed	end	    end	    in_number	end
+# in_number	end	    end	    in_number	end
+# end	    end	    end	    end	        end
+# 左边的一列代表四个状态
+# 上边的一行代表四种字符串情况
+#
+
+INT_MAX = 2**31 -1
+INT_MIN = -2**31
+
+class Automaton:
+    def __init__(self):
+        self.state = 'start'
+        self.sign = 1   # 正/负
+        self.ans = 0    # 最终结果
+        # ' '、'+/-'、'number'、'other'
+        self.table = {
+            'start': ['start', 'signed', 'in_number', 'end'],
+            'signed': ['end', 'end', 'in_number', 'end'],
+            'in_number': ['end', 'end', 'in_number', 'end'],
+            'end': ['end', 'end', 'end', 'end']
+        }
+
+    def get_state(self, c: str):
+        if c == ' ': return 0
+        if c == '+' or c == '-': return 1
+        if c.isdigit(): return 2
+        else: return 3
+
+    def get(self, c: str):
+        self.state = self.table[self.state][self.get_state(c)]
+        if self.state == 'start':
+            return 'start'
+        if self.state == 'signed':
+            self.sign = 1 if c=='+' else -1
+            return 'signed'
+        if self.state == 'in_number':
+            self.ans *= 10
+            self.ans += int(c)
+            self.ans = min(INT_MAX, self.ans) if self.sign==1 else min(self.ans, -INT_MIN)
+            return 'in_number'
+        else:
+            return 'end'
+
+class Solution:
+    def myAtoi(self, str: str) -> int:
+        automaton = Automaton()
+        for c in str:
+            tmp_res = automaton.get(c)
+            if tmp_res == 'end':
+                break
+        return automaton.ans * automaton.sign
+
+if __name__ == '__main__':
+    solution = Solution()
+    number = '42'
+    res = solution.myAtoi(number)
+    print(res)
+
