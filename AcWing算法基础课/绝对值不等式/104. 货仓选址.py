@@ -24,3 +24,28 @@
 输出样例：
 12
 '''
+# 很经典的问题
+# 首先，如果我们把商店的地址设为x1, x2, x3,..., xn，把仓库的地址设为x，那么
+# f(x)表示仓库到商店的距离和
+# f(x) = abs(x-x1)+abs(x-x2)+abs(x-x3)+...+abs(x-xn)
+# 首先公布一下答案：中位数！
+# 如果是奇数个，那么把仓库放到中间那个商店即可
+# 如果是偶数个，那么把仓库放到中间两个商店之间任一位置均可
+# 证明：abs(x-x1)+abs(x-x2)+abs(x-x3)+...+abs(x-xn)
+# = 【abs(x-x1)+abs(x-xn)】+【abs(x-x2)+abs(x-xn-1)】+...+
+# 由于【abs(x-x1)+abs(x-xn)】最小值为xn-x1，所以：
+# 原式 >= (xn-x1)+(xn-1-x2)+...+
+# 取等号（=）的充要条件：x处在(x1, xn)之间，x处在(x2, xn-1)之间，x处在。。。(xn-k, xn-k+1)之间，其中，k是中间的数
+# 即，x是中位数就可
+
+if __name__ == '__main__':
+    num = int(input())
+    dist = list(map(int, input().split()))
+    dist.sort()
+    mid = len(dist) // 2
+    mid_val = dist[mid]
+    res = 0
+    for i in range(len(dist)):
+        res += abs(dist[i]-mid_val)
+    print(res)
+
