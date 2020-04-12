@@ -59,5 +59,3 @@ if __name__ == '__main__':
     n = 500
     res = solution.numOfWays(n)
     print(res)
-    # a = 1e1
-    # print(a)
