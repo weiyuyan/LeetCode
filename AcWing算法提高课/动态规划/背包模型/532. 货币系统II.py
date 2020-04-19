@@ -46,3 +46,64 @@
 2
 5
 '''
+# 首先发现题目中隐含的一些性质
+# 性质1：a1, a2, ... , an一定都可以被表示出来
+# 性质2：bi 一定不能被b1, b2, ... , bm表示出来，否则就可以把bi删掉，{b}就不是最优解
+# 性质3：b1, b2, b3, ... , bm一定都是从{ai}中选出来的。可以用反证法证明
+# 假设bk 不在{ai}中，有两种可能：
+
+# ①{ai}可以表示出bk，即bk = t1*a1 + t2*a2....，由于bk不在{ai}中，因此有效的式子至少有两个
+# 记为bk = tq*aq + tr*ar ，其中tq, tr >= 1。
+# 此外，由于{ai}中的元素可以由{bi}来表示，因此 aq ar也可以由{bi}表示，假设 aq, ar由bk等{bi}中的元素表示，假设有bk在里边
+# 即aq = m*bk + n*b1... ，由于m>=1 ，这时原式子就变成
+# bk = tq* (m*bk + n*b1 +...+) + tr*ar，这里ar以此类推，不举例了
+# 显然矛盾，因为tq, m, n, ..., tr均 >= 1
+# 所以可能①不成立
+
+# 再来看可能②：
+# ②{ai} 不可以表示出bk，显然矛盾，因为{ai}不可以表示出bk，但{bi}一定可以表示出bk，与题目相悖
+
+# 综上，b1, b2, b3,...,bm 一定都是从{ai}中选出来的
+# 于是答案的搜索空间从无穷降到了指数级别
+
+# 正式开始：
+# 首先，值较大的数肯定是由值较小的数表示出来的，所以我们把a数组进行一个排序
+# 所以我们的核心就是，判断ai能否被a1~ai-1间的数字表示出来
+# 也就是看a1~ai-1是否能装满容积为ai的背包  完全背包问题
+
+# dp[i][j]表示只看前i张纸币，能组成j元钱的方案数
+from typing import List
+class Solution:
+    def currency_system(self, money: List[int]):
+        money.sort()
+        dp = [[0 for _ in range(money[-1]+1)] for _ in range(len(money)+1)]
+        dp[0][0] = 1
+        for i in range(1, len(dp)):
+            for j in range(len(dp[0])):
+                if j >= money[i-1]:
+                    dp[i][j] = dp[i-1][j] + dp[i][j-money[i-1]]
+                else:
+                    dp[i][j] = dp[i-1][j]
+
+        # 这里我们遍历dp数组，从字典里消去那些重复的元素
+        res = set(money[:])
+        for i in range(1, len(money)):
+            for j in range(i, len(money)):
+                if dp[i][money[j]] != 0:
+                    if money[j] in res:
+                        res.remove(money[j])
+
+        return len(res)
+
+if __name__ == '__main__':
+    solution = Solution()
+    groups = int(input())
+    res = []
+    for i in range(groups):
+        nums = int(input())
+        money = list(map(int, input().split()))
+        tmp = solution.currency_system(money)
+        res.append(tmp)
+
+    for i in res:
+        print(i)
