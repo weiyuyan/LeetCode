@@ -69,6 +69,7 @@ class Solution:
         dp = [[0 for _ in range(n+1)] for _ in range(n)]
 
 
+
 if __name__ == '__main__':
     solution = Solution()
     relation = [[0,2],[2,1],[3,4],[2,3],[1,4],[2,0],[0,4]]
