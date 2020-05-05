@@ -25,3 +25,4 @@
 from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
+        # 首先要找到在哪个位置做了旋转
